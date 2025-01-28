@@ -1,0 +1,375 @@
+DIJOUS 23/01
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Instale la versión más reciente de PowerShell para obtener nuevas características y mejoras. https://aka.ms/PSWindows
+
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git version
+git version 2.45.1.windows.1
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git init
+Initialized empty Git repository in C:/Users/Natalia Barrera/Desktop/Entorns de Desenvolupament/proves.git/.git/
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        proves.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git add .
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   proves.txt
+
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git commit -m "primer commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Natalia Barrera@DESKTOP-86T7F0C.(none)')
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git config --global user.email natalia.barrera@paucasesnovescifp.cat
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git config --global user.name Natalia
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git commit -m "primer commit"
+[master (root-commit) b681cf3] primer commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 proves.txt
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git config -- list
+error: key does not contain a section: list
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.email=natalia.barrera@paucasesnovescifp.cat
+user.name=Natalia
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git status
+On branch master
+nothing to commit, working tree clean
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git log
+commit b681cf36adcddfd23ee99df0f5353ea5b485861d (HEAD -> master)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:36:32 2025 +0100
+
+    primer commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git branch novaBranca
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git branch -a
+* master
+  novaBranca
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git checkout novaBranca
+Switched to branch 'novaBranca'
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git branch -a
+  master
+* novaBranca
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git status
+On branch novaBranca
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        branca.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git add .
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git commit -m "commit branca"
+[novaBranca 5853f34] commit branca
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 branca.txt
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git log
+commit 5853f34022f9823e455cb038cb586ced2f5e1bdc (HEAD -> novaBranca)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:42:21 2025 +0100
+
+    commit branca
+
+commit b681cf36adcddfd23ee99df0f5353ea5b485861d (master)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:36:32 2025 +0100
+
+    primer commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git checkout master
+Switched to branch 'master'
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git merge master novaBranca
+Updating b681cf3..5853f34
+Fast-forward
+ branca.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 branca.txt
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git checkout novaBranca
+Switched to branch 'novaBranca'
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git checkout master
+Switched to branch 'master'
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git log
+commit 5853f34022f9823e455cb038cb586ced2f5e1bdc (HEAD -> master, novaBranca)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:42:21 2025 +0100
+
+    commit branca
+
+commit b681cf36adcddfd23ee99df0f5353ea5b485861d
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:36:32 2025 +0100
+
+    primer commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git branch -a novaBranca
+fatal: the -a, and -r, options to 'git branch' do not take a branch name.
+Did you mean to use: -a|-r --list <pattern>?
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git branch -d novaBranca
+Deleted branch novaBranca (was 5853f34).
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git log
+commit 5853f34022f9823e455cb038cb586ced2f5e1bdc (HEAD -> master)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:42:21 2025 +0100
+
+    commit branca
+
+commit b681cf36adcddfd23ee99df0f5353ea5b485861d
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:36:32 2025 +0100
+
+    primer commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git branch -a
+* master
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git>
+______________________________________________________________________________________________________________________________________
+DIMARTS 28/01
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Instale la versión más reciente de PowerShell para obtener nuevas características y mejoras. https://aka.ms/PSWindows
+
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git log
+commit 5853f34022f9823e455cb038cb586ced2f5e1bdc (HEAD -> master)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:42:21 2025 +0100
+
+    commit branca
+
+commit b681cf36adcddfd23ee99df0f5353ea5b485861d
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:36:32 2025 +0100
+
+    primer commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git commit -m "prova"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        prova.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git log
+commit 5853f34022f9823e455cb038cb586ced2f5e1bdc (HEAD -> master)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:42:21 2025 +0100
+
+    commit branca
+
+commit b681cf36adcddfd23ee99df0f5353ea5b485861d
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:36:32 2025 +0100
+
+    primer commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git remote add hub https://github.com/Nataliacifp/prova
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git remote -v
+hub     https://github.com/Nataliacifp/prova (fetch)
+hub     https://github.com/Nataliacifp/prova (push)
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git log
+commit 5853f34022f9823e455cb038cb586ced2f5e1bdc (HEAD -> master)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:42:21 2025 +0100
+
+    commit branca
+
+commit b681cf36adcddfd23ee99df0f5353ea5b485861d
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:36:32 2025 +0100
+
+    primer commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git push -u -f master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git push -u -f prova master
+fatal: 'prova' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git remote add prova https://github.com/Nataliacifp/prova
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git remote -v
+hub     https://github.com/Nataliacifp/prova (fetch)
+hub     https://github.com/Nataliacifp/prova (push)
+prova   https://github.com/Nataliacifp/prova (fetch)
+prova   https://github.com/Nataliacifp/prova (push)
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git log
+commit 5853f34022f9823e455cb038cb586ced2f5e1bdc (HEAD -> master)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:42:21 2025 +0100
+
+    commit branca
+
+commit b681cf36adcddfd23ee99df0f5353ea5b485861d
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:36:32 2025 +0100
+
+    primer commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git push -u -f prova master
+info: please complete authentication in your browser...
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 440 bytes | 36.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Nataliacifp/prova
+ * [new branch]      master -> master
+branch 'master' set up to track 'prova/master'.
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git clone https://github.com/Nataliacifp/prova.git
+Cloning into 'prova'...
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 5 (delta 0), reused 5 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (5/5), done.
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> git status
+On branch master
+Your branch is up to date with 'prova/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        prova.txt
+        prova/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git> cd prova
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova> git add .
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   arxiu.txt
+
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova> git commmit -m "arxiu"
+git: 'commmit' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova> git commit -m "pujar arxiu"
+[master 1c2368a] pujar arxiu
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arxiu.txt
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova> git log
+commit 1c2368a921505c5101d1673cff922424ca8e2647 (HEAD -> master)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Tue Jan 28 20:01:39 2025 +0100
+
+    pujar arxiu
+
+commit 5853f34022f9823e455cb038cb586ced2f5e1bdc (origin/master, origin/HEAD)
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:42:21 2025 +0100
+
+    commit branca
+
+commit b681cf36adcddfd23ee99df0f5353ea5b485861d
+Author: Natalia <natalia.barrera@paucasesnovescifp.cat>
+Date:   Thu Jan 23 20:36:32 2025 +0100
+
+    primer commit
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova> git push https://github.com/Nataliacifp/prova.git
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 262 bytes | 87.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Nataliacifp/prova.git
+   5853f34..1c2368a  master -> master
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova> git clone https://github.com/Nataliacifp/prova3.git
+Cloning into 'prova3'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 9 (delta 4), reused 8 (delta 3), pack-reused 0 (from 0)
+Receiving objects: 100% (9/9), done.
+Resolving deltas: 100% (4/4), done.
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova> git add .
+warning: adding embedded git repository: prova3
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> prova3
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached prova3
+hint:
+hint: See "git help submodule" for more information.
+hint: Disable this message with "git config advice.addEmbeddedRepo false"
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova> cd prova3
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova\prova3> git add .
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova\prova3> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Natalia.txt
+
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova\prova3> git commit -m "pujar arxiu"
+[master 3083aa6] pujar arxiu
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Natalia.txt
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova\prova3> git pushhttps://github.com/Nataliacifp/prova3.git
+git: 'pushhttps://github.com/Nataliacifp/prova3.git' is not a git command. See 'git --help'.
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova\prova3> git push https://github.com/Nataliacifp/prova3.git
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 247 bytes | 123.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Nataliacifp/prova3.git
+   2995f25..3083aa6  master -> master
+PS C:\Users\Natalia Barrera\Desktop\Entorns de Desenvolupament\proves.git\prova\prova3>
+
+
+
